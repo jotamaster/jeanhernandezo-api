@@ -18,9 +18,9 @@ use Illuminate\Support\Facades\Route;
 // Route::post('login', 'Api\AuthController@login');
 // Route::post('register', 'Api\AuthController@register');
 
-// Route::get('unauthorized',  function(Request $request){
-//     return response()->json(['message'=>'unauthorized'],401);
-// })->name('unauthorized');
+Route::get('unauthorized',  function(Request $request){
+    return response()->json(['message'=>'unauthorized'],401);
+})->name('unauthorized');
 
 // Route::middleware('auth:api')->get('/user', function (Request $request) {
 //     return $request->user();
