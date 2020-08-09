@@ -3,6 +3,21 @@
 use Illuminate\Support\Facades\Route;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
+
+
+Route::group([], function () {
+
+    Route::get('users', 'UserController@all');
+    Route::resource('statususers', 'StatusUserController');
+
+    Route::group([
+      'middleware' => 'auth:api'
+    ], function() {
+        Route::get('logouwwt', 'AuthController@logout');
+    });
+});
+
+//auhthentication
 Route::group([
     'prefix' => 'auth'
 ], function () {
