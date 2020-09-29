@@ -13,7 +13,7 @@ Route::group([], function () {
     Route::group([
       'middleware' => 'auth:api'
     ], function() {
-        Route::get('logouwwt', 'AuthController@logout');
+        Route::get('logout', 'AuthController@logout');
     });
 });
 
