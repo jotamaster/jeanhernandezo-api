@@ -29,7 +29,15 @@ Route::group([
     ], function() {
         Route::get('logout', 'AuthController@logout');
         Route::get('user', 'AuthController@user');
+
     });
+});
+
+Route::group([
+    'middleware' => 'auth:api'
+  ], function() {
+    Route::resource('clients', 'ClientController');
+
 });
 
 Route::get('unauthorized',function(){
